@@ -1,0 +1,150 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 3CF2-62BB
+
+ Directory of c:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\Microsoft\VisualStudio\v15.0
+
+07/14/2019  04:18 PM    <DIR>          Python Tools
+               0 File(s)              0 bytes
+
+ Directory of c:\ProgramData\Microsoft\Windows\Start Menu\Programs
+
+07/14/2019  04:16 PM    <DIR>          Python 2.7
+               0 File(s)              0 bytes
+
+ Directory of c:\ProgramData\Microsoft\Windows\Start Menu\Programs\Python 2.7
+
+07/14/2019  04:16 PM             2,599 Python (command line).lnk
+07/14/2019  04:16 PM             1,306 Python Manuals.lnk
+               2 File(s)          3,905 bytes
+
+ Directory of c:\Users\All Users\Microsoft\Windows\Start Menu\Programs
+
+07/14/2019  04:16 PM    <DIR>          Python 2.7
+               0 File(s)              0 bytes
+
+ Directory of c:\Users\All Users\Microsoft\Windows\Start Menu\Programs\Python 2.7
+
+07/14/2019  04:16 PM             2,599 Python (command line).lnk
+07/14/2019  04:16 PM             1,306 Python Manuals.lnk
+               2 File(s)          3,905 bytes
+
+ Directory of c:\Users\barry\.atom\packages\atom-beautify\docs\code\class
+
+03/13/2019  08:33 PM             5,562 PythonBeautifier.html
+               1 File(s)          5,562 bytes
+
+ Directory of c:\Users\barry\.atom\packages\atom-beautify\docs\code\file\src\languages
+
+03/13/2019  08:33 PM             4,306 python.coffee.html
+               1 File(s)          4,306 bytes
+
+ Directory of c:\Users\barry\.atom\packages\atom-beautify\examples\nested-jsbeautifyrc
+
+03/13/2019  08:33 PM    <DIR>          python
+               0 File(s)              0 bytes
+
+ Directory of c:\Users\barry\.atom\packages\atom-beautify\src\languages
+
+03/13/2019  08:33 PM             1,354 python.coffee
+               1 File(s)          1,354 bytes
+
+ Directory of c:\Users\barry\.vscode\extensions\emmanuelbeziat.vscode-great-icons-2.1.47\icons
+
+03/13/2019  11:58 AM               408 python.png
+               1 File(s)            408 bytes
+
+ Directory of c:\Users\barry\.vscode\extensions\ms-python.python-2019.6.24221
+
+07/09/2019  07:51 PM    <DIR>          pythonFiles
+               0 File(s)              0 bytes
+
+ Directory of c:\Users\barry\.vscode\extensions\ms-python.python-2019.6.24221\pythonFiles\lib
+
+07/09/2019  07:51 PM    <DIR>          python
+               0 File(s)              0 bytes
+
+ Directory of c:\Users\barry\.vscode\extensions\ms-python.python-2019.6.24221\pythonFiles\lib\python\parso
+
+07/09/2019  07:51 PM    <DIR>          python
+               0 File(s)              0 bytes
+
+ Directory of c:\Users\barry\.vscode\extensions\ms-python.python-2019.6.24221\pythonFiles\lib\python\ptvsd\_vendored\pydevd\pydevd_attach_to_process\dll
+
+07/09/2019  07:51 PM            21,816 python.h
+               1 File(s)         21,816 bytes
+
+ Directory of c:\Users\barry\.vscode\extensions\ms-python.python-2019.6.24221\pythonFiles\lib\python\ptvsd\_vendored\pydevd\pydevd_attach_to_process\linux
+
+07/09/2019  07:51 PM            20,026 python.h
+               1 File(s)         20,026 bytes
+
+ Directory of c:\Users\barry\.vscode\extensions\ms-python.python-2019.6.24221\resources
+
+07/09/2019  07:51 PM             6,447 PythonSelector.png
+               1 File(s)          6,447 bytes
+
+ Directory of c:\Users\barry\.vscode\extensions\ms-python.python-2019.6.24221\snippets
+
+07/09/2019  07:51 PM             6,785 python.json
+               1 File(s)          6,785 bytes
+
+ Directory of c:\Users\barry\.windows-build-tools
+
+07/14/2019  04:15 PM        20,246,528 python-2.7.15.amd64.msi
+07/14/2019  04:16 PM            53,464 python-log.txt
+07/14/2019  04:16 PM    <DIR>          python27
+               2 File(s)     20,299,992 bytes
+
+ Directory of c:\Users\barry\.windows-build-tools\python27
+
+04/30/2018  04:31 PM            28,160 python.exe
+04/30/2018  04:31 PM            28,160 pythonw.exe
+               2 File(s)         56,320 bytes
+
+
+node-gyp --python c:\Users\barry\.windows-build-tools\python27
+npm config set python c:\Users\barry\.windows-build-tools\python27
+
+
+ Directory of c:\Users\barry\.windows-build-tools\python27\Doc
+
+04/30/2018  04:20 PM         6,252,777 python2715.chm
+               1 File(s)      6,252,777 bytes
+
+ Directory of c:\Users\barry\.windows-build-tools\python27\include
+
+02/13/2017  10:37 PM            21,648 Python-ast.h
+04/14/2018  10:47 PM             4,556 Python.h
+08/26/2017  11:47 PM             7,415 pythonrun.h
+               3 File(s)         33,619 bytes
+
+ Directory of c:\Users\barry\.windows-build-tools\python27\Lib\idlelib\Icons
+
+02/13/2017  10:38 PM               585 python.gif
+               1 File(s)            585 bytes
+
+ Directory of c:\Users\barry\.windows-build-tools\python27\Lib\test
+
+04/14/2018  10:47 PM            14,832 pythoninfo.py
+               1 File(s)         14,832 bytes
+
+ Directory of c:\Users\barry\.windows-build-tools\python27\Lib\test\imghdrdata
+
+02/13/2017  10:38 PM             1,162 python.bmp
+02/13/2017  10:38 PM               610 python.gif
+02/13/2017  10:38 PM               543 python.jpg
+02/13/2017  10:38 PM                41 python.pbm
+02/13/2017  10:38 PM               269 python.pgm
+02/13/2017  10:38 PM             1,020 python.png
+02/13/2017  10:38 PM               781 python.ppm
+02/13/2017  10:38 PM             1,056 python.ras
+02/13/2017  10:38 PM             1,967 python.sgi
+02/13/2017  10:38 PM             1,326 python.tiff
+02/13/2017  10:38 PM               288 python.xbm
+              11 File(s)          9,063 bytes
+
+ Directory of c:\Users\barry\.windows-build-tools\python27\libs
+
+04/30/2018  04:30 PM           230,512 python27.lib
+               1 File(s)        230,512 bytes
+
