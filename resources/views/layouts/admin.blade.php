@@ -42,7 +42,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="./">Home</a>
+            <a class="navbar-brand" href="/codehacking/public/">Home</a>
         </div>
         <!-- /.navbar-header -->
 
@@ -62,7 +62,7 @@
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="{{ url('codehacking/public/logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                     </li>
                 </ul>
                 <!-- /.dropdown-user -->
@@ -116,18 +116,18 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="codehacking/public/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="/codehacking/public/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
 
                     <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Users<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="./admin/users">All Users</a>
+                                <a href="/codehacking/public/admin/users">All Users</a>
                             </li>
 
                             <li>
-                                <a href="./admin/users/create">Create User</a>
+                                <a href="/codehacking/public/admin/users/create">Create User</a>
                             </li>
 
                         </ul>
@@ -348,11 +348,6 @@
 
 <!-- jQuery -->
 <script src="{{asset('js/libs.js')}}"></script>
-{{-- <script src="{{asset('js/jquery.js')}}"></script>
-<script src="{{asset('js/bootstrap.js')}}"></script>
-<script src="{{asset('js/metisMenu.js')}}"></script>
-<script src="{{asset('js/sb-admin-2.js')}}"></script>
-<script src="{{asset('js/scripts.js')}}"></script> --}}
 
 @yield('footer')
 
