@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>Admin Index</h1>
+<h1>Admin Index - Edited</h1>
 
 @endsection
 
