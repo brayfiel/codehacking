@@ -16,7 +16,6 @@
 
     <link href="{{asset('css/libs.css')}}" rel="stylesheet">
 
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -24,8 +23,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
-
+    @yield('styles')
 
 </head>
 
@@ -46,10 +44,7 @@
         </div>
         <!-- /.navbar-header -->
 
-
-
         <ul class="nav navbar-top-links navbar-right">
-
 
             <!-- /.dropdown -->
             <li class="dropdown">
@@ -70,13 +65,7 @@
             </li>
             <!-- /.dropdown -->
 
-
         </ul>
-
-
-
-
-
 
         {{--<ul class="nav navbar-nav navbar-right">--}}
         {{--@if(auth()->guest())--}}
@@ -97,10 +86,6 @@
         {{--</li>--}}
         {{--@endif--}}
         {{--</ul>--}}
-
-
-
-
 
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
@@ -153,7 +138,6 @@
                         <!-- /.nav-second-level -->
                     </li>
 
-
                     <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Categories<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
@@ -169,27 +153,20 @@
                         <!-- /.nav-second-level -->
                     </li>
 
-
                     <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Media<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="codehacking/public/media">All Media</a>
+                                <a href="{{route('admin.media.index')}}">All Media</a>
                             </li>
 
                             <li>
-                                <a href="">Upload Media</a>
+                                <a href="{{route('admin.media.create')}}">Upload Media</a>
                             </li>
 
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
-
-
-
-
-
-
 
                     <li>
                         <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
@@ -277,16 +254,11 @@
                     </li>
                 </ul>
 
-
             </div>
             <!-- /.sidebar-collapse -->
         </div>
         <!-- /.navbar-static-side -->
     </nav>
-
-
-
-
 
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
@@ -294,9 +266,6 @@
                 <li>
                     <a href="codehacking/public/profile"><i class="fa fa-dashboard fa-fw"></i>Profile</a>
                 </li>
-
-
-
 
                 <li>
                     <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
@@ -313,10 +282,6 @@
                     <!-- /.nav-second-level -->
                 </li>
 
-
-
-
-
             </ul>
 
         </div>
@@ -324,11 +289,6 @@
     </div>
 
 </div>
-
-
-
-
-
 
 <!-- Page Content -->
 <div id="page-wrapper">
@@ -355,9 +315,7 @@
 
 @yield('footer')
 
-
-
-
+@yield('scripts')
 
 </body>
 
