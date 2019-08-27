@@ -21,7 +21,8 @@ class AdminPostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::All();
+        // $posts = Post::All();        //original non-paginated statement
+        $posts = Post::paginate(2);     //create pages of two records
         return view('admin.posts.index', compact('posts'));
     }
 

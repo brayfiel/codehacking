@@ -16,6 +16,94 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `categories`
+--
+
+DROP TABLE IF EXISTS `categories`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `categories` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `categories`
+--
+
+LOCK TABLES `categories` WRITE;
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` VALUES (1,'PHP','2019-08-10 19:38:00','2019-08-10 19:38:00'),(2,'Laravel','2019-08-10 19:38:00','2019-08-10 19:38:00'),(3,'JavaScript','2019-08-10 19:38:00','2019-08-10 19:38:00'),(5,'Java - edited','2019-08-13 05:28:40','2019-08-13 17:43:12'),(8,'Bootstrap','2019-08-13 18:16:41','2019-08-13 18:16:41');
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `comment_replies`
+--
+
+DROP TABLE IF EXISTS `comment_replies`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `comment_replies` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `comment_id` int(10) unsigned NOT NULL,
+  `is_active` int(11) NOT NULL DEFAULT '0',
+  `author` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `body` text COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `comment_replies_comment_id_index` (`comment_id`),
+  CONSTRAINT `comment_replies_comment_id_foreign` FOREIGN KEY (`comment_id`) REFERENCES `comments` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comment_replies`
+--
+
+LOCK TABLES `comment_replies` WRITE;
+/*!40000 ALTER TABLE `comment_replies` DISABLE KEYS */;
+/*!40000 ALTER TABLE `comment_replies` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `comments`
+--
+
+DROP TABLE IF EXISTS `comments`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `comments` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `post_id` int(10) unsigned NOT NULL,
+  `is_active` int(11) NOT NULL DEFAULT '0',
+  `author` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `body` text COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `comments_post_id_index` (`post_id`),
+  CONSTRAINT `comments_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `comments`
+--
+
+LOCK TABLES `comments` WRITE;
+/*!40000 ALTER TABLE `comments` DISABLE KEYS */;
+/*!40000 ALTER TABLE `comments` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -34,7 +122,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES ('2014_10_12_000000_create_users_table',1),('2014_10_12_100000_create_password_resets_table',1),('2019_07_09_041605_create_roles_table',1),('2019_07_18_050725_add_photo_id_to_users',2),('2019_07_18_154702_create_photos_table',3);
+INSERT INTO `migrations` VALUES ('2014_10_12_000000_create_users_table',1),('2014_10_12_100000_create_password_resets_table',1),('2019_07_09_041605_create_roles_table',1),('2019_07_18_050725_add_photo_id_to_users',1),('2019_07_18_154702_create_photos_table',1),('2019_08_01_220052_create_posts_table',1),('2019_08_06_225206_create_categories_table',1),('2019_08_16_013917_create_comments_table',2),('2019_08_16_013957_create_comment_replies_table',2);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -76,7 +164,7 @@ CREATE TABLE `photos` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,8 +173,42 @@ CREATE TABLE `photos` (
 
 LOCK TABLES `photos` WRITE;
 /*!40000 ALTER TABLE `photos` DISABLE KEYS */;
-INSERT INTO `photos` VALUES (1,'1563477730IMG_1200.JPG','2019-07-18 23:22:10','2019-07-18 23:22:10'),(2,'1563751766IMG_0180.JPG','2019-07-22 03:29:26','2019-07-22 03:29:26'),(3,'1563751803IMG_0154.JPG','2019-07-22 03:30:03','2019-07-22 03:30:03'),(4,'1563751860IMG_1261.JPG','2019-07-22 03:31:00','2019-07-22 03:31:00'),(5,'1563917868IMG_1190.JPG','2019-07-24 01:37:48','2019-07-24 01:37:48'),(6,'1564067978IMG_0658.JPG','2019-07-25 19:19:38','2019-07-25 19:19:38'),(7,'1564164056IMG_0650.JPG','2019-07-26 22:00:56','2019-07-26 22:00:56');
+INSERT INTO `photos` VALUES (1,'156546800220190713_073519.jpg','2019-08-11 00:13:22','2019-08-11 00:13:22'),(3,'1565468284december11, 2004 004.jpg','2019-08-11 00:18:04','2019-08-11 00:18:04'),(4,'1565468324PICT0134.JPG','2019-08-11 00:18:44','2019-08-11 00:18:44'),(5,'1565469482P1000017.JPG','2019-08-11 00:38:02','2019-08-11 00:38:02'),(6,'1565469538P1000012.JPG','2019-08-11 00:38:58','2019-08-11 00:38:58'),(8,'1565550110IMG_0710.JPG','2019-08-11 23:01:50','2019-08-11 23:01:50'),(9,'1565550140IMG_0714.JPG','2019-08-11 23:02:20','2019-08-11 23:02:20'),(10,'1565550180IMG_0722.JPG','2019-08-11 23:03:00','2019-08-11 23:03:00'),(11,'1565550227IMG_0725.JPG','2019-08-11 23:03:47','2019-08-11 23:03:47'),(12,'1565891025december11, 2004 002.jpg','2019-08-15 21:43:45','2019-08-15 21:43:45'),(13,'1565891025december11, 2004 001.jpg','2019-08-15 21:43:45','2019-08-15 21:43:45'),(14,'1565891025december11, 2004 003.jpg','2019-08-15 21:43:45','2019-08-15 21:43:45'),(15,'1565891025december11, 2004 004.jpg','2019-08-15 21:43:45','2019-08-15 21:43:45'),(17,'1565891025december11, 2004 014.jpg','2019-08-15 21:43:45','2019-08-15 21:43:45');
 /*!40000 ALTER TABLE `photos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `posts`
+--
+
+DROP TABLE IF EXISTS `posts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `posts` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL,
+  `category_id` int(10) unsigned NOT NULL,
+  `photo_id` int(10) unsigned NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `body` text COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `posts_user_id_index` (`user_id`),
+  KEY `posts_category_id_index` (`category_id`),
+  KEY `posts_photo_id_index` (`photo_id`),
+  CONSTRAINT `posts_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `posts`
+--
+
+LOCK TABLES `posts` WRITE;
+/*!40000 ALTER TABLE `posts` DISABLE KEYS */;
+INSERT INTO `posts` VALUES (1,1,2,8,'Roof 1','First roof pic','2019-08-11 23:00:42','2019-08-11 23:01:50'),(2,1,3,9,'Roof 2','Second roof pic','2019-08-11 23:02:20','2019-08-11 23:02:20'),(3,1,8,10,'Roof 3','Third roof pic','2019-08-11 23:03:00','2019-08-13 18:16:54'),(4,1,8,11,'Roof Four','Fourth roof pic','2019-08-11 23:03:47','2019-08-13 18:17:01');
+/*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -102,7 +224,7 @@ CREATE TABLE `roles` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +233,7 @@ CREATE TABLE `roles` (
 
 LOCK TABLES `roles` WRITE;
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
-INSERT INTO `roles` VALUES (1,'administrator','2019-07-10 21:25:00','2019-07-10 21:25:00'),(2,'author','2019-07-10 21:25:00','2019-07-10 21:25:00'),(3,'subscriber','2019-07-10 21:25:00','2019-07-10 21:25:00');
+INSERT INTO `roles` VALUES (1,'Administrator','2019-08-10 19:38:00','2019-08-10 19:38:00'),(2,'Editor','2019-08-10 19:38:00','2019-08-10 19:38:00'),(3,'Author','2019-08-10 19:38:00','2019-08-10 19:38:00'),(4,'Subscriber','2019-08-10 19:38:00','2019-08-10 19:38:00');
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -136,7 +258,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`),
   KEY `users_role_id_index` (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,7 +267,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,1,1,'Barry Rayfield - GMail','barry.rayfield@gmail.com','$2y$10$V7HRNWodATuN.X6vAXmMr.JWoL190iw6.la8C8qd88gMvYfnHm09O','6JGNfVlOu75jD6VUTMzad0ShCNzWYpfgoX0JK5XR2OtFQVRT1Uun5QMfgQbZ','2019-07-11 01:40:34','2019-07-27 02:10:40','4'),(2,1,1,'John Doe edited','john.doe@bsrresearch.com','',NULL,'2019-07-11 02:02:26','2019-07-22 03:29:26','2'),(11,2,1,'Barry Rayfield - Outlook','barry.rayfield@outlook.com','$2y$10$qAe1cdpokMI0rYnyR56fhe/ExS/.anlBV44DoREJok518JzSwd3u6','jtI92R0d9K3oJ9xzruTKdbazSuWRcX5xtGsvCMEdfDJ8Gqj72M70qkg4EAAY','2019-07-25 18:03:01','2019-07-27 03:02:40','6');
+INSERT INTO `users` VALUES (1,1,1,'Barry Rayfield','barry.rayfield@gmail.com','$2y$10$k7lHo1kIpG/0c8ybEQzE6e4b46pa7FOXYsS4UJzOMZuvqFS3IPfPq','gGczcbFEB9HFkHdcXwGRQBKr1k6b4HqrD5lRzxXTAZu7yYwhFO3Yw0XEyLOG','2019-08-10 23:46:02','2019-08-11 00:13:22','1'),(3,3,1,'Manny Rayfield','manny.rayfield@bsrresearch.com','$2y$10$CFa216JahhZTztGcJOBKq.8BumeQDpHdI4hMprwtrCsKob27ZjAjm','XB2R7Ss1qiSn7vZsj1p80HWkLbVo0kWkHxMQhZJtS0LM5dPgcYlpPz6AHmEW','2019-08-10 23:47:32','2019-08-11 00:18:04','3'),(4,4,1,'Mally Rayfield','mally.rayfield@gmail.com','$2y$10$68T1jEejEmIx3Eba.9fUY.woEN1u2nfJB.GR8xeyrr1kvvxey0FLO','pVPoVv6s6X3yLSE5rJRmBWu8KRNkjFYl35F4gPk7HoBGQtdPsNjHmdnzRDWe','2019-08-10 23:48:03','2019-08-11 00:18:44','4');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -158,4 +280,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-26 19:04:00
+-- Dump completed on 2019-08-15 22:25:56
