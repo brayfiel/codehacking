@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Category;
 
 class AdminCategoriesController extends Controller
 {
