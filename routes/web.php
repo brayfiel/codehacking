@@ -71,32 +71,3 @@ Route::group(['middleware'=>'admin'], function () {
 Route::group(['middleware'=>'auth'], function () {
     Route::post('comment/reply', 'CommentRepliesController@createReply');
 });
-
-// Route::group(
-//     ['as' => 'admin.', // the trailing dot makes me think this is unintended
-//     'prefix' => 'admin',
-//     'middleware' => 'admin'],
-//     function () {
-//         Route::resource('categories', 'AdminCategoriesController');
-//         Route::resource('jobtitles', 'AdminJobtitlesController');
-//         Route::resource('skills', 'AdminSkillsController');
-//         Route::resource('users', 'AdminUsersController');
-//         Route::resource('packages', 'AdminPackagesController');
-//     }
-// );
-
-// Route::group(
-//     // ['prefix' => 'admin', 'middleware' => 'admin'],
-//     ['as' => 'admin.', 'middleware' => 'admin'],
-//     function () {
-//         Route::get('/admin', function () {
-//             return view('admin.index');
-//         });
-//         Route::resource('admin/users', 'AdminUsersController');
-//         Route::resource('admin/posts', 'AdminPostsController');
-//         Route::resource('admin/categories', 'AdminCategoriesController');
-//         Route::resource('admin/media', 'AdminMediasController');
-//         Route::resource('admin/comments', 'PostCommentsController');
-//         Route::resource('admin/comment/replies', 'CommentRepliesController');
-//     }
-// );

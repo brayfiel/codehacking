@@ -9,7 +9,10 @@
         "laravel/framework": "5.3.*",
         "laravelcollective/html": "5.3.*",
         "cviebrock/eloquent-sluggable": "^4.0",
-        "filp/whoops": "^2.5"
+        "filp/whoops": "^2.5",
+        "unisharp/laravel-filemanager": "^1.6",
+        "intervention/image": "^2.3"
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

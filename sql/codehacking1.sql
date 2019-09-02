@@ -57,10 +57,11 @@ CREATE TABLE `comment_replies` (
   `body` text COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `photo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `comment_replies_comment_id_index` (`comment_id`),
   CONSTRAINT `comment_replies_comment_id_foreign` FOREIGN KEY (`comment_id`) REFERENCES `comments` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,6 +70,7 @@ CREATE TABLE `comment_replies` (
 
 LOCK TABLES `comment_replies` WRITE;
 /*!40000 ALTER TABLE `comment_replies` DISABLE KEYS */;
+INSERT INTO `comment_replies` VALUES (1,1,1,'Barry Rayfield','barry.rayfield@gmail.com','Reply #1 again','2019-08-22 19:57:51','2019-08-24 02:55:06','156546800220190713_073519.jpg'),(2,4,1,'Barry Rayfield','barry.rayfield@gmail.com','reply #2','2019-08-22 19:59:16','2019-08-24 17:53:05','156546800220190713_073519.jpg'),(4,4,1,'Barry Rayfield','barry.rayfield@gmail.com','Reply Charlie','2019-08-24 17:47:09','2019-08-24 17:53:06','156546800220190713_073519.jpg'),(5,1,1,'Barry Rayfield','barry.rayfield@gmail.com','Reply Beta','2019-08-24 19:00:30','2019-08-25 01:31:28','156546800220190713_073519.jpg');
 /*!40000 ALTER TABLE `comment_replies` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -88,10 +90,11 @@ CREATE TABLE `comments` (
   `body` text COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `photo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `comments_post_id_index` (`post_id`),
   CONSTRAINT `comments_post_id_foreign` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -100,6 +103,7 @@ CREATE TABLE `comments` (
 
 LOCK TABLES `comments` WRITE;
 /*!40000 ALTER TABLE `comments` DISABLE KEYS */;
+INSERT INTO `comments` VALUES (1,1,1,'Barry Rayfield','barry.rayfield@gmail.com','This is a test comment for post #1.','2019-08-19 20:25:07','2019-08-21 21:24:58','156546800220190713_073519.jpg'),(2,1,1,'Barry Rayfield','barry.rayfield@gmail.com','This is the second comment for post #1','2019-08-19 20:29:36','2019-08-24 19:10:13','156546800220190713_073519.jpg'),(4,1,1,'Barry Rayfield','barry.rayfield@gmail.com','Comment test #1 of 2019-08-20 for post 1','2019-08-20 18:54:29','2019-08-24 19:10:47','156546800220190713_073519.jpg'),(5,2,1,'Barry Rayfield','barry.rayfield@gmail.com','test comment for post 2 a.k.a roof 2','2019-08-21 04:29:32','2019-08-24 17:45:55','156546800220190713_073519.jpg'),(6,1,1,'Barry Rayfield','barry.rayfield@gmail.com','fourth comment','2019-08-22 20:01:17','2019-08-24 19:11:06','156546800220190713_073519.jpg'),(7,1,1,'Barry Rayfield','barry.rayfield@gmail.com','Comment baker','2019-08-24 17:45:35','2019-08-24 17:45:56','156546800220190713_073519.jpg');
 /*!40000 ALTER TABLE `comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,7 +126,7 @@ CREATE TABLE `migrations` (
 
 LOCK TABLES `migrations` WRITE;
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
-INSERT INTO `migrations` VALUES ('2014_10_12_000000_create_users_table',1),('2014_10_12_100000_create_password_resets_table',1),('2019_07_09_041605_create_roles_table',1),('2019_07_18_050725_add_photo_id_to_users',1),('2019_07_18_154702_create_photos_table',1),('2019_08_01_220052_create_posts_table',1),('2019_08_06_225206_create_categories_table',1),('2019_08_16_013917_create_comments_table',2),('2019_08_16_013957_create_comment_replies_table',2);
+INSERT INTO `migrations` VALUES ('2014_10_12_000000_create_users_table',1),('2014_10_12_100000_create_password_resets_table',1),('2019_07_09_041605_create_roles_table',1),('2019_07_18_050725_add_photo_id_to_users',1),('2019_07_18_154702_create_photos_table',1),('2019_08_01_220052_create_posts_table',1),('2019_08_06_225206_create_categories_table',1),('2019_08_16_013917_create_comments_table',2),('2019_08_16_013957_create_comment_replies_table',2),('2019_08_19_163547_add_photo_column_to_comments',3),('2019_08_19_201331_add_photo_column_to_comments_replies',4);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -280,4 +284,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-08-15 22:25:56
+-- Dump completed on 2019-08-24 23:22:18
