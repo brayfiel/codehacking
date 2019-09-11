@@ -62,7 +62,8 @@ Route::group(['middleware'=>'admin'], function () {
         'index'=>'admin.comment.replies.index',
         'create'=>'admin.comment.replies.create',
         'store'=>'admin.comment.replies.store',
-        'edit'=>'admin.comment.replies.edit'
+        'edit'=>'admin.comment.replies.edit',
+        'show'=>'admin.comment.replies.show',
     ]]);
 });
 

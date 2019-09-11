@@ -76,7 +76,7 @@ CREATE TABLE `photos` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -85,7 +85,7 @@ CREATE TABLE `photos` (
 
 LOCK TABLES `photos` WRITE;
 /*!40000 ALTER TABLE `photos` DISABLE KEYS */;
-INSERT INTO `photos` VALUES (1,'1563477730IMG_1200.JPG','2019-07-18 23:22:10','2019-07-18 23:22:10'),(2,'1563751766IMG_0180.JPG','2019-07-22 03:29:26','2019-07-22 03:29:26'),(3,'1563751803IMG_0154.JPG','2019-07-22 03:30:03','2019-07-22 03:30:03'),(4,'1563751860IMG_1261.JPG','2019-07-22 03:31:00','2019-07-22 03:31:00');
+INSERT INTO `photos` VALUES (1,'1563477730IMG_1200.JPG','2019-07-18 23:22:10','2019-07-18 23:22:10'),(2,'1563751766IMG_0180.JPG','2019-07-22 03:29:26','2019-07-22 03:29:26'),(3,'1563751803IMG_0154.JPG','2019-07-22 03:30:03','2019-07-22 03:30:03'),(4,'1563751860IMG_1261.JPG','2019-07-22 03:31:00','2019-07-22 03:31:00'),(5,'1563917868IMG_1190.JPG','2019-07-24 01:37:48','2019-07-24 01:37:48'),(6,'1564067978IMG_0658.JPG','2019-07-25 19:19:38','2019-07-25 19:19:38'),(7,'1564164056IMG_0650.JPG','2019-07-26 22:00:56','2019-07-26 22:00:56');
 /*!40000 ALTER TABLE `photos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -136,7 +136,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`),
   KEY `users_role_id_index` (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,7 +145,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,1,1,'Barry Rayfield','barry.rayfield@gmail.com','','QrzOJjFxjBxiEVqAL9oUBYPlM41shoqJTvRFLXyQphnfVqDIbIsTeE8Zsn8f','2019-07-11 01:40:34','2019-07-22 03:31:00','4'),(2,1,1,'John Doe edited','john.doe@bsrresearch.com','',NULL,'2019-07-11 02:02:26','2019-07-22 03:29:26','2'),(3,3,0,'Jane Doe','jane.doe@bsrresearch.com','',NULL,'2019-07-11 02:04:23','2019-07-22 03:30:03','3'),(4,3,0,'Ralph Doe','ralph.doe@bsrresearch.com','mischeif02',NULL,'2019-07-11 02:06:03','2019-07-11 02:06:03',''),(5,3,0,'Edna Doe','edna.doe@bsrresearch.com','$2y$10$yRR/SjWBIlgKg6X/iIUWEO73Of9lRmthtRUfyatC6TPjb.w.V6RIu',NULL,'2019-07-11 02:13:02','2019-07-11 02:13:02',''),(6,1,0,'Frank Doe','frank.doe@bsrresearch.com','$2y$10$Kt6imV8glpb4GSgkMcb.o.e/tONKpjFaFKvdfcjuf2uECjw2Stkzi',NULL,'2019-07-11 02:15:39','2019-07-11 02:15:39',''),(7,1,1,'George Doe','george.doe@bsrresearch.com','$2y$10$qhy8jY53g.zkqx30BLAvGebILPEnyg3xHtg1qCeMUB4Km9yXaiX2C',NULL,'2019-07-12 06:39:06','2019-07-12 06:39:06',''),(8,3,1,'able','baker','mischeif02',NULL,'2019-07-18 18:25:29','2019-07-18 18:25:29',''),(9,2,0,'charlie name','charlie email','mischeif02',NULL,'2019-07-18 18:30:33','2019-07-18 18:30:33',''),(10,2,0,'delta name','delta email','$2y$10$xgMSGxoPwVblJCyAavPxVeeh35vJuvvTjsc/PIiYc6RZgbIMuf2aC',NULL,'2019-07-18 23:22:10','2019-07-18 23:22:10','1');
+INSERT INTO `users` VALUES (1,1,1,'Barry Rayfield - GMail','barry.rayfield@gmail.com','$2y$10$V7HRNWodATuN.X6vAXmMr.JWoL190iw6.la8C8qd88gMvYfnHm09O','6JGNfVlOu75jD6VUTMzad0ShCNzWYpfgoX0JK5XR2OtFQVRT1Uun5QMfgQbZ','2019-07-11 01:40:34','2019-07-27 02:10:40','4'),(2,1,1,'John Doe edited','john.doe@bsrresearch.com','',NULL,'2019-07-11 02:02:26','2019-07-22 03:29:26','2'),(11,2,1,'Barry Rayfield - Outlook','barry.rayfield@outlook.com','$2y$10$qAe1cdpokMI0rYnyR56fhe/ExS/.anlBV44DoREJok518JzSwd3u6','jtI92R0d9K3oJ9xzruTKdbazSuWRcX5xtGsvCMEdfDJ8Gqj72M70qkg4EAAY','2019-07-25 18:03:01','2019-07-27 03:02:40','6');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -158,4 +158,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-21 19:52:45
+-- Dump completed on 2019-07-26 19:04:00
