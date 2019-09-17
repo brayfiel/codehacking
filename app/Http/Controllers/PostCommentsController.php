@@ -41,7 +41,7 @@ class PostCommentsController extends Controller
     public function store(Request $request)
     {
         $user = Auth::user();
-        $photoName = substr(strstr($user->photo->file, '/images/'), 8);
+        $photoName = $user->photo ? substr(strstr($user->photo->file, '/images/'), 8): "";
 
         $data = [
             'post_id'=>$request->post_id,
@@ -53,7 +53,7 @@ class PostCommentsController extends Controller
         ];
 
         Comment::create($data);
-        $request->session()->flash('comment_message', 'Y(our comment has been submitted and is awaiting moderation.');
+        $request->session()->flash('comment_message', 'Your comment has been submitted and is awaiting moderation.');
         return redirect()->back();
     }
 
